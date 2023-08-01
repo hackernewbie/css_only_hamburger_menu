@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <style>
+	.hamburger-menu{
+    height: 76px;
+    position: fixed;
+    z-index: 8;
+    background-color: #fff;
+		}
+		.frontend-logo-container .header-byline-container{
+		font-size: 13px;
+		}
+		.frontend-logo-container .header-byline{
+			align-self: center;
+			text-align: right;
+			padding-right: 8%;
+		}
+		.frontend-logo{
+			max-height: 60px;
+			padding: 10px 30px;
+		}
+		.hamburger-logo{
+			max-height: 65px;
+			padding: 10px 30px;
+		}
+		#menu__toggle {
+			opacity: 0;
+		  }
+		  #menu__toggle:checked ~ .menu__btn > span {
+			transform: rotate(45deg);
+
+		  }
+		  #menu__toggle:checked ~ .menu__btn > span::before {
+			top: 0;
+			transform: rotate(0);
+
+		  }
+		  #menu__toggle:checked ~ .menu__btn > span::after {
+			top: 0;
+			transform: rotate(90deg);
+		  }
+		  #menu__toggle:checked ~ .menu__box {
+			visibility: visible;
+			left: 78%;
+		  }
+
+		  .menu__btn {
+			display: flex;
+			align-items: center;
+			position: fixed;
+			top: 20px;
+			left: 96%;
+
+			width: 26px;
+			height: 26px;
+
+			cursor: pointer;
+			z-index: 6;
+		  }
+
+		  .menu__btn > span,
+		  .menu__btn > span::before,
+		  .menu__btn > span::after {
+			display: block;
+			position: absolute;
+
+			width: 100%;
+			height: 2px;
+
+			background-color: #616161;
+
+			transition-duration: .25s;
+		  }
+		  .menu__btn > span::before {
+			content: '';
+			top: -8px;
+		  }
+		  .menu__btn > span::after {
+			content: '';
+			top: 8px;
+		  }
+
+		  .menu__box {
+			display: grid !important;
+			position: fixed;
+			visibility: hidden;
+			top: 0;
+			left: 100%;
+			width: 22%;
+			height: 100%;
+			margin: 0;
+			/* padding: 80px 0; */
+			padding-top: 80px;
+			padding-right: 50px;
+			padding-left: 0px;
+			padding-bottom: 100%;
+			list-style: none;
+			z-index: 5;
+			background-color: #ECEFF1;
+			box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+			transition-duration: .25s;
+			line-height: 2.5em;
+		  }
+
+		  .menu__item {
+			display: block;
+			padding: 12px 24px;
+
+			color: #333;
+			text-align: right;
+			font-family: 'vivotypeτ«Ç';
+			font-size: 20px;
+			font-weight: 600;
+			text-decoration: none;
+			transition-duration: .25s;
+		  }
+		  .menu__item:hover {
+			background-color: #CFD8DC;
+		  }
+
+		  /* // Responsive Media Queries */
+		@media (max-width: 840px) {
+			.frontend-logo{
+				padding: 10px;
+			}
+			.hamburger-menu{
+				height: 60px;
+			}
+			.menu__btn{
+				left: 90%;
+			}
+			.menu__box {
+				position: unset;
+				height: auto;
+				width: 100%;
+				padding-top: 80px;
+				padding-right: 0;
+				padding-left: 0;
+				padding-bottom: 100%;
+			}
+			.menu__item{
+				text-align: center;
+			}
+			.frontend-logo-container .header-byline{
+				padding-right: 12%;
+				padding-top: 1%;
+			}
+			.frontend-logo-container .header-byline-container{
+				font-size: 10px;
+			}
+
+		}
+
+	</style>
+    
+</head>
+<body>
+<div class="hamburger-menu container-fluid">
+    <div class="frontend-logo-container">
+        <div class="row">
+            <div class="col-6">
+                LOGO
+            </div>
+            
+        </div>
+    </div>
+
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+
+    <ul class="menu__box">
+        <li><a class="menu__item" href="#">HOME</a></li>
+        <li><a class="menu__item" href="#">ABOUT</a></li>
+        <li><a class="menu__item" href="#">PRIVACY POLICY</a></li>
+        <li><a class="menu__item" href="#">TERMS AND CONDITIONS</a></li>
+    </ul>
+</div>
+</body>
+</html>
